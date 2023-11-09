@@ -4,8 +4,7 @@ In this repository you will find analysis, scripts, plots, commands and more cre
 
 # Notes
 ## scripts and commands used
-
-## preprocessing 
+within this readme, notes are taking on command used for analysis for easy retrieval on later dates
 
 ## concatenating reads
 ```bash
