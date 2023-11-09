@@ -177,7 +177,7 @@ Rivka2_7_aligned     NZ_CP039266.1:164865-166220	7949
 Sucaria1_1_aligned     NZ_CP039266.1:164865-166220	9359
 Tonna1_2_aligned     NZ_CP039266.1:164865-166220	6834
 ```
-#Extracting SlpH from NCBI genomes
+# Extracting SlpH from NCBI genomes
 Download fasta files from all available genomes on NCBI for crispatus.
 
 Run prokka using the following bash loop:
