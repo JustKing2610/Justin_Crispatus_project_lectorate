@@ -8,8 +8,8 @@ The 700 assemblies on NCBI for _Lactobacillus crispatus_ were downloaded as fast
 
 # extraction of SlpH gene sequence in fasta format from the genomes
 Before anything could be said and done with the SlpH genes of as many strains as possible, they first had to be extracted from the genomes downloaded from NCBI. For this, Prokka was used to annotate each assembly. The following bash command was used to run prokka on each genome assembly.
-'''
+
+```
 asfada
 
-'''
-
+```
