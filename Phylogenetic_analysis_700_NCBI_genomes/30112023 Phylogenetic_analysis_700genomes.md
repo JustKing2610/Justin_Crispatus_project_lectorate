@@ -118,3 +118,5 @@ This script saved all the fasta files containing sequences longer than 1300 base
 ```
 cat *.fasta > combined_fastas.fasta
 ```
+#creating an outgroup from Lactobacillus helveticus
+
