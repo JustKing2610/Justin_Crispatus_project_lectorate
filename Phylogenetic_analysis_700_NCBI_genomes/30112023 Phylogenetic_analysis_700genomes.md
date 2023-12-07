@@ -84,5 +84,37 @@ SeqIO.write(filtered_sequences, output_file, "fasta")
 print(f"{len(filtered_sequences)} sequences above {min_length} bases written to {output_file}")
 ```
 
-When the resulting fasta was used in a MSA, all sequences aligned well, however, the some were longer than others, which called for some consideration as to which sequences should be included in the phylogenetic analysis
+When the resulting fasta was used in a MSA, all sequences aligned well, however, some were longer than others, which called for some consideration as to which sequences should be included in the phylogenetic analysis
 
+For this, a python script was written to calculate the average length, and filter by a length >1300 basepairs. As the refseq SlpH was 1356 basepairs long.
+```
+from Bio import SeqIO
+
+def calculate_average_seqlength(input_file):
+    sequences = list(SeqIO.parse(input_file, "fasta"))
+    total_length = sum(len(seq_record.seq) for seq_record in sequences)
+    return total_length / len(sequences)
+
+def filter_by_length(input_file, minimum_length):
+    good_seqs = []
+    for seq_record in SeqIO.parse(input_file, "fasta"):
+        if len(seq_record.seq) > minimum_length:
+            good_seqs.append(seq_record)
+    return good_seqs
+
+input_file = "combined_slph_for_alignment.fasta"
+output_file = "seq_right_length.fasta"
+min_length = 1300
+
+filtered_sequences = filter_by_length(input_file, min_length)
+
+average_length = calculate_average_seqlength(input_file)
+print(f"Average sequence length: {average_length:.2f} bases")
+
+SeqIO.write(filtered_sequences, output_file, "fasta")
+print(f"{len(filtered_sequences)} sequences above {min_length} bases written to {output_file}")
+```
+This script saved all the fasta files containing sequences longer than 1300 basepairs to a new folder, in which they were concatonated into 1 fasta containing all SlpH sequences from the remaining genomes.
+```
+cat *.fasta > combined_fastas.fasta
+```
