@@ -162,5 +162,9 @@ gff_files = glob.glob("/mnt/StudentFiles/2023/Justin/Phylogenetic_analysis/helve
 extract_slpH_gene_positions(gff_files)
 ```
 
-# Multiple sequence alignment using MEGA11 and ClustalW algorithm
-when doing an initial alignment, it was witnessed that the helveticus gene started 162 bases earlier than annotated SlpH genes from crispatus strains. This anomaly was caused by a an earlier ATG site in the gene, which prokka picked up to be the start codon. this was trimmed until the proper ATG which matched with the crispatus SlpH genes. 
+# Multiple sequence alignment using MAFFT
+when doing an initial alignment, it was witnessed that the helveticus gene started 162 bases earlier than annotated SlpH genes from crispatus strains. This anomaly was caused by a an earlier ATG site in the gene, which prokka picked up to be the start codon. this was trimmed until the proper ATG which matched with the crispatus SlpH genes.
+
+the E-INS-i strategy was chosen in mafft due to it's accuracy on similar types of alignments like on this dataset. as seen in the image below. This strategy seemed optimal since initial alignments showed a very similar profile.
+![image](https://github.com/JustKing2610/Justin_Crispatus_project_lectorate/assets/127951903/4b64dfcf-0e44-48f1-8a52-a4f375e33b45)
+
