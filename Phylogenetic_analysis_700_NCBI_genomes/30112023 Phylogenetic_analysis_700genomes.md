@@ -118,5 +118,49 @@ This script saved all the fasta files containing sequences longer than 1300 base
 ```
 cat *.fasta > combined_fastas.fasta
 ```
-# creating an outgroup from Lactobacillus helveticus
+# creating an outgroup from _Lactobacillus helveticus_
+To continue in the creation of a solid phylogenetic analysis of all remaining SlpH sequences from _L. crisptatus_, a good outgroup needed to be selected. For this, lactobacillus helveticus was chosen, based on an earlier made alignment which showed similarities, yet enough differences.
 
+To start, the assembly of _L. helveticus_ GCA_003053085.1 was downloaded from NCBI. Prokka was run on this genome to extract the SlpH gene in the same way as for _L. crisptatus_. Since in previous alignments, the helveticus SlpH gene extracted directly from NCBI was noticably longer and did not contribute to a good multiple sequence alignment.
+
+prokka was run using the following command
+```
+prokka --outdir prokka_out/ genome/ncbi_dataset/data/GCA_003053085.1/GCA_003053085.1_ASM305308v1_genomic.fna
+```
+
+to extract the SlpH sequence, the script used for _L. crispatus_ was slightly modified as seen below:
+```
+
+from Bio.Seq import Seq
+from Bio import SeqIO
+from BCBio import GFF
+import os
+import glob
+
+def extract_slpH_gene_positions(gff_files):
+    target_feature_type = "CDS"
+    target_gene_name = "slpH"
+
+    for gff_file in gff_files:
+        folder_name = os.path.basename(os.path.dirname(gff_file))
+        output = f"{folder_name}_SlpH.fasta"
+        with open(gff_file) as in_handle, open(output, 'w') as out_handle:
+            for rec in GFF.parse(in_handle):
+                for feature in rec.features:
+                    gene_name = feature.qualifiers.get('Name', [''])[0]
+                    if feature.type.lower() == target_feature_type.lower() and gene_name.lower() == target_gene_name.lower():
+                        start = feature.location.start
+                        end = feature.location.end
+                        seq = str(Seq(feature.extract(rec.seq)))
+                        out_handle.write(f">SlpH_{folder_name} \n{seq}\n")
+                        print(f"Gene Name: SlpH, Start: {start}, End: {end}")
+                    else:
+                        print("Skipped feature:", feature)
+
+gff_files = glob.glob("/mnt/StudentFiles/2023/Justin/Phylogenetic_analysis/helveticus_refseq/prokka_out/helveticus_refseq/PROKKA_12072023.gff")
+
+extract_slpH_gene_positions(gff_files)
+```
+
+# Multiple sequence alignment using MEGA11 and ClustalW algorithm
+when doing an initial alignment, it was witnessed that the helveticus gene started 162 bases earlier than annotated SlpH genes from crispatus strains. This anomaly was caused by a an earlier ATG site in the gene, which prokka picked up to be the start codon. this was trimmed until the proper ATG which matched with the crispatus SlpH genes. 
