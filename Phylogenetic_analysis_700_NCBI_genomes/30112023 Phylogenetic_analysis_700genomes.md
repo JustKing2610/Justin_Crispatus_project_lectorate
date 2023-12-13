@@ -55,7 +55,7 @@ cat *.fasta > combined_slph_for_alignment.fasta
 ```
 
 #quality control of the extracted SlpH sequences
-After aligning the combined SlpH sequences using MUSCLE in the MEGA11 application, a lot of big gaps were witnessed, and certain sequences started only at position 1300 or later. To eliminate the gaps and mismatching in the alignment, a script was written to calculate the average length, and write sequences above 1300 bases (refseq was 1356bases) to a new file called seq_right_length_slph.fasta. it also printed the amount of sequences written to this file, which were 311 sequences. 
+After aligning the combined SlpH sequences using MUSCLE in the MEGA11 application, a lot of big gaps were witnessed, and certain sequences started only at position 1300 or later. To eliminate the gaps and mismatching in the alignment, a script was written to calculate the average length, and write sequences above 1300 bases (refseq was 1356bases) to a new file called seq_right_length_slph.fasta. it also printed the amount of sequences written to this file, which were 311 sequences. meaning 92 sequences were considered too short.
 ```
 from Bio import SeqIO
 
@@ -83,38 +83,7 @@ print(f"Average sequence length: {average_length:.2f} bases")
 SeqIO.write(filtered_sequences, output_file, "fasta")
 print(f"{len(filtered_sequences)} sequences above {min_length} bases written to {output_file}")
 ```
-
-When the resulting fasta was used in a MSA, all sequences aligned well, however, some were longer than others, which called for some consideration as to which sequences should be included in the phylogenetic analysis
-
-For this, a python script was written to calculate the average length, and filter by a length >1300 basepairs. As the refseq SlpH was 1356 basepairs long.
-```
-from Bio import SeqIO
-
-def calculate_average_seqlength(input_file):
-    sequences = list(SeqIO.parse(input_file, "fasta"))
-    total_length = sum(len(seq_record.seq) for seq_record in sequences)
-    return total_length / len(sequences)
-
-def filter_by_length(input_file, minimum_length):
-    good_seqs = []
-    for seq_record in SeqIO.parse(input_file, "fasta"):
-        if len(seq_record.seq) > minimum_length:
-            good_seqs.append(seq_record)
-    return good_seqs
-
-input_file = "combined_slph_for_alignment.fasta"
-output_file = "seq_right_length.fasta"
-min_length = 1300
-
-filtered_sequences = filter_by_length(input_file, min_length)
-
-average_length = calculate_average_seqlength(input_file)
-print(f"Average sequence length: {average_length:.2f} bases")
-
-SeqIO.write(filtered_sequences, output_file, "fasta")
-print(f"{len(filtered_sequences)} sequences above {min_length} bases written to {output_file}")
-```
-This script saved all the fasta files containing sequences longer than 1300 basepairs to a new folder, in which they were concatonated into 1 fasta containing all SlpH sequences from the remaining genomes.
+next, the newly written sequences longer than 1300bp were concatonated into 1 fasta containing all SlpH sequences from the remaining genomes.
 ```
 cat *.fasta > combined_fastas.fasta
 ```
@@ -163,7 +132,7 @@ extract_slpH_gene_positions(gff_files)
 ```
 
 # Multiple sequence alignment using MAFFT
-when doing an initial alignment, it was witnessed that the helveticus gene started 162 bases earlier than annotated SlpH genes from crispatus strains. This anomaly was caused by a an earlier ATG site in the gene, which prokka picked up to be the start codon. this was trimmed until the proper ATG which matched with the crispatus SlpH genes.
+when doing an initial alignment, it was witnessed that the helveticus gene started 162 bases earlier than annotated SlpH genes from crispatus strains. This anomaly was caused by a an earlier ATG site in the genomic assembly of helveticus, which prokka picked up to be the start codon. this was trimmed until the proper ATG which matched with the crispatus SlpH genes.
 
 the E-INS-i strategy was chosen in mafft due to it's accuracy on similar types of alignments like on this dataset. as seen in the image below. This strategy seemed optimal since initial alignments showed a very similar profile.
 ![image](https://github.com/JustKing2610/Justin_Crispatus_project_lectorate/assets/127951903/4b64dfcf-0e44-48f1-8a52-a4f375e33b45)
@@ -176,9 +145,14 @@ mafft --genafpair  --maxiterate 16 --inputorder "../only_good_seqs_slph.fasta" >
 However, after performing this initial alignment, it was seen through NCBI MSA viewer version 1.25.0, there were a lot of big gaps, created by sequences that had big insertions in random places, as seen in a small portion this alignment below:
 ![image](https://github.com/JustKing2610/Justin_Crispatus_project_lectorate/assets/127951903/7edfb074-76c7-467c-b2bb-94567a399100)
 
-In this alignment, the very top sequence is the consensus, below that is a slph gene from _L. helveticus_ and below _L. helveticus_ is the _L. crispatus_ reference sequence. It is clear there are some very different sequences in this alignment. to improve the quality of the alignment and simultaneously create a more supported phylogenetic tree, all highly variable sequences, ande sequences with an insert that was not present in the majority of the sequences, where discarded and saved in a fasta file for later analysis.
+In this alignment, the very top sequence is the consensus, below that is a slph gene from _L. helveticus_ and below _L. helveticus_ is the _L. crispatus_ reference sequence. It is clear there are some very different sequences in this alignment. to improve the quality of the alignment and simultaneously create a more supported phylogenetic tree, all highly variable sequences, ande sequences with an insert that was not present in the majority of the sequences, where discarded and saved in a fasta file for later analysis. The discarded sequences and the reason are shown in the flowchart below:
+![image](https://github.com/JustKing2610/Justin_Crispatus_project_lectorate/assets/127951903/61668a73-aaac-49b3-be43-677bceabe81f)
 
 
+
+After inspecting the alignment after discarding all possible sequences which did not match the set criteria, the following alignment was generated with the same parameters as before (only a part is shown): 
+![image](https://github.com/JustKing2610/Justin_Crispatus_project_lectorate/assets/127951903/651cc557-92d7-4070-8cfe-58873f064f2d)
+in this alignment, it is clear that all remaining sequences align much better, the only big gaps are created by the helveticus refseq (sequence 1) and crispatus refseq (sequence 2)
 
 
 After using mafft to align the sequences, the output file from mafft was used in iqtree to create a phylogenetic tree to analyse, using the following command.
@@ -188,6 +162,7 @@ iqtree -s only_good_seqs_slph_E_INS_I_alignment_final -B 1000 -alrt 1000
 ```
 where -s specified the input
 -B 1000 set the number of bootstrap replicates to 1000 to create a higher reliability
--alrt 1000 est the number of ultra fast bootstrap replicates to 1000 and stands for approximate likelihood ratio test which is a second method of assesing bootstrap support.
+
+-alrt 1000 set the number of ultra fast bootstrap replicates to 1000 and stands for approximate likelihood ratio test which is a second method of assesing bootstrap support.
 
 
