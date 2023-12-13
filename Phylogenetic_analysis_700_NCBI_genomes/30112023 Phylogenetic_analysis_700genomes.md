@@ -168,3 +168,26 @@ when doing an initial alignment, it was witnessed that the helveticus gene start
 the E-INS-i strategy was chosen in mafft due to it's accuracy on similar types of alignments like on this dataset. as seen in the image below. This strategy seemed optimal since initial alignments showed a very similar profile.
 ![image](https://github.com/JustKing2610/Justin_Crispatus_project_lectorate/assets/127951903/4b64dfcf-0e44-48f1-8a52-a4f375e33b45)
 
+Mafft was run on the remaining genomes longer than 1300bp. the command used was, this was created by following the menu of mafft by typing "mafft" in the command line. after specifying input, output, output format, alignment method.
+```
+mafft --genafpair  --maxiterate 16 --inputorder "../only_good_seqs_slph.fasta" > "only_good_seqs_slph_E_INS_I_alignment_final" 
+
+```
+However, after performing this initial alignment, it was seen through NCBI MSA viewer version 1.25.0, there were a lot of big gaps, created by sequences that had big insertions in random places, as seen in a small portion this alignment below:
+![image](https://github.com/JustKing2610/Justin_Crispatus_project_lectorate/assets/127951903/7edfb074-76c7-467c-b2bb-94567a399100)
+
+In this alignment, the very top sequence is the consensus, below that is a slph gene from _L. helveticus_ and below _L. helveticus_ is the _L. crispatus_ reference sequence. It is clear there are some very different sequences in this alignment. to improve the quality of the alignment and simultaneously create a more supported phylogenetic tree, all highly variable sequences, ande sequences with an insert that was not present in the majority of the sequences, where discarded and saved in a fasta file for later analysis.
+
+
+
+
+After using mafft to align the sequences, the output file from mafft was used in iqtree to create a phylogenetic tree to analyse, using the following command.
+```
+iqtree -s only_good_seqs_slph_E_INS_I_alignment_final -B 1000 -alrt 1000
+
+```
+where -s specified the input
+-B 1000 set the number of bootstrap replicates to 1000 to create a higher reliability
+-alrt 1000 est the number of ultra fast bootstrap replicates to 1000 and stands for approximate likelihood ratio test which is a second method of assesing bootstrap support.
+
+
