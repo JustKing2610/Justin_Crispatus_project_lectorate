@@ -167,4 +167,7 @@ where -s specified the input
 
 -alrt 1000 set the number of ultra fast bootstrap replicates to 1000 and stands for approximate likelihood ratio test which is a second method of assesing bootstrap support.
 
+This created the following phylogenetic tree:
+
+![image](https://github.com/JustKing2610/Justin_Crispatus_project_lectorate/assets/127951903/80fc5645-9a4c-4418-a4e1-0f37101bfd6e)
 
