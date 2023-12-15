@@ -149,13 +149,11 @@ In this alignment, the very top sequence is the consensus, below that is a slph 
 
 ![image](https://github.com/JustKing2610/Justin_Crispatus_project_lectorate/assets/127951903/d21a82e6-9728-4866-91c0-fca6551190ae)
 
-
-
-
 After inspecting the alignment after discarding all possible sequences which did not match the set criteria, the following alignment was generated with the same parameters as before (only a part is shown): 
 ![image](https://github.com/JustKing2610/Justin_Crispatus_project_lectorate/assets/127951903/651cc557-92d7-4070-8cfe-58873f064f2d)
 in this alignment, it is clear that all remaining sequences align much better, the only big gaps are created by the helveticus refseq (sequence 1) and crispatus refseq (sequence 2)
 
+# Phylogenetic analysis
 
 After using mafft to align the sequences, the output file from mafft was used in iqtree to create a phylogenetic tree to analyse, using the following command.
 ```
