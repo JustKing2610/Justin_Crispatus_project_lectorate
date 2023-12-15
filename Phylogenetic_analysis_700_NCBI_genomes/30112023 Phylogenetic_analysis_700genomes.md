@@ -146,6 +146,7 @@ However, after performing this initial alignment, it was seen through NCBI MSA v
 ![image](https://github.com/JustKing2610/Justin_Crispatus_project_lectorate/assets/127951903/7edfb074-76c7-467c-b2bb-94567a399100)
 
 In this alignment, the very top sequence is the consensus, below that is a slph gene from _L. helveticus_ and below _L. helveticus_ is the _L. crispatus_ reference sequence. It is clear there are some very different sequences in this alignment. to improve the quality of the alignment and simultaneously create a more supported phylogenetic tree, all highly variable sequences, ande sequences with an insert that was not present in the majority of the sequences, where discarded and saved in a fasta file for later analysis. The discarded sequences and the reason are shown in the flowchart below:
+
 ![image](https://github.com/JustKing2610/Justin_Crispatus_project_lectorate/assets/127951903/d21a82e6-9728-4866-91c0-fca6551190ae)
 
 
