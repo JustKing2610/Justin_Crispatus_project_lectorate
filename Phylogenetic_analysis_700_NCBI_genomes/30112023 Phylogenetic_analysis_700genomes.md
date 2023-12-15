@@ -54,7 +54,7 @@ When this script was ran, a folder named extracted_SlpH_fastas was created conta
 cat *.fasta > combined_slph_for_alignment.fasta
 ```
 
-#quality control of the extracted SlpH sequences
+# quality control of the extracted SlpH sequences
 After aligning the combined SlpH sequences using MUSCLE in the MEGA11 application, a lot of big gaps were witnessed, and certain sequences started only at position 1300 or later. To eliminate the gaps and mismatching in the alignment, a script was written to calculate the average length, and write sequences above 1300 bases (refseq was 1356bases) to a new file called seq_right_length_slph.fasta. it also printed the amount of sequences written to this file, which were 311 sequences. meaning 92 sequences were considered too short.
 ```
 from Bio import SeqIO
