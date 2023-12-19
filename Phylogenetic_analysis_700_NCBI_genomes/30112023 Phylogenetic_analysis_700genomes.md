@@ -153,7 +153,7 @@ After inspecting the alignment after discarding all possible sequences which did
 ![image](https://github.com/JustKing2610/Justin_Crispatus_project_lectorate/assets/127951903/651cc557-92d7-4070-8cfe-58873f064f2d)
 in this alignment, it is clear that all remaining sequences align much better, the only big gaps are created by the helveticus refseq (sequence 1) and crispatus refseq (sequence 2)
 
-# Phylogenetic analysis
+# Initial Phylogenetic analysis
 
 After using mafft to align the sequences, the output file from mafft was used in iqtree to create a phylogenetic tree to analyse, using the following command.
 ```
@@ -168,4 +168,8 @@ where -s specified the input
 This created the following phylogenetic tree:
 
 ![image](https://github.com/JustKing2610/Justin_Crispatus_project_lectorate/assets/127951903/80fc5645-9a4c-4418-a4e1-0f37101bfd6e)
+
+# adding Sequence types to the analysis with a self made scheme using chewbbaca
+
+
 
