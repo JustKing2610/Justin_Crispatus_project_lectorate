@@ -48,7 +48,9 @@ def extract_slpH_gene_positions(gff_file):
     extract_slpH_gene_positions(gff_file)
 ```
 
-When this script was ran, a folder named extracted_SlpH_fastas was created containing individual fasta sequences of each assembly containing the SlpH sequence as annotated by prokka. After this step, 297 sequences were discarded as they did not contain SlpH.
+Prokka was also run on all 700 crispatus genomes collected from NCBI. When after this same script was run on all the gff files produced. a folder named extracted_SlpH_fastas was created containing individual fasta sequences of each assembly containing the SlpH sequence as annotated by prokka. After this step, 297 sequences were discarded as they did not contain SlpH.
+
+To combine all the seperate gene .fasta files, they were concatenated into 1 file for alignment using the following command.
 
 ```
 cat *.fasta > combined_slph_for_alignment.fasta
