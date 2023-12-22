@@ -172,6 +172,70 @@ This created the following phylogenetic tree:
 ![image](https://github.com/JustKing2610/Justin_Crispatus_project_lectorate/assets/127951903/80fc5645-9a4c-4418-a4e1-0f37101bfd6e)
 
 # adding Sequence types to the analysis with a self made scheme using chewbbaca
+## running chewBBACA
+ChewBBACA (version 3.3.1) was used to create a cgMLST schema from the crispatus genomes gathered from NCBI. First, Busco was run on the genomes, determining the completeness of the genomes. The highest number of complete genes was determined to be 4020. It was decided to not include assemblies with a complete gene number lower then 3900, to increase the quality and completeness of the cgMLST scheme. 
 
+after running Busco, chewBBACA was run according to the documentation found here:https://github.com/B-UMMI/chewBBACA/blob/master/CHEWBBACA/docs/user/tutorials/chewie_step_by_step.rst 
+this resulted in a cgMLST scheme consisting of the remaining genomes.
+
+## Assigning sequence types using python
+To assign the sequence Types to each genome, the cgMLST scheme (excel format) was ran through the following script, extracting the cgMLST profiles for each identifier, saving it to a dictonary. After which every unique dictonary got assigned a ST starting from 1. 
+
+```
+import pandas as pd
+
+tsv_file = "/mnt/StudentFiles/2023/Justin/mlst_crispatus/tsv_MLST_scheme/cgMLST_profiles.tsv"
+
+df = pd.read_csv(tsv_file, delimiter='\t')
+
+dict_GCA = {}
+
+#for each row, take the GCA ID from the column named "file" and join the values of the row together with "-"
+
+for index, row in df.iterrows():
+    GCA_ID = row["FILE"]
+
+    row_values = list(row[1:])
+
+    row_string = '-'.join(map(str, row_values))
+
+    dict_GCA[GCA_ID] = row_string
+
+results_df = pd.DataFrame(list(dict_GCA.items()), columns=["GCA", 'Allele_values'])
+
+
+results_df.to_excel("/mnt/StudentFiles/2023/Justin/mlst_crispatus/output_python_mlst_scheme/output_dict_Alleleschema.xlsx", index=False)
+
+
+
+values = list(dict_GCA.values())
+
+labels = pd.factorize(values)[0] + 1
+
+ST_types_label = [f'ST{label}' for label in labels]
+
+final_dict = dict(zip(dict_GCA.keys(), ST_types_label))
+
+
+print("Check final dictonary for GCA numbers and ST types:", final_dict)
+
+ST_dataframe = pd.DataFrame(list(final_dict.items()), columns=["Identifier", "Sequence_types"])
+
+ST_dataframe.to_excel("/mnt/StudentFiles/2023/Justin/mlst_crispatus/output_python_mlst_scheme/ST_types_Crispatus_chewbacca.xlsx", index=False)
+```
+
+This created an excel file with the following format: | Identifier | Sequence Type |
+Identifier	Sequence_types
+GCA_000091765	ST1
+GCA_000160515	ST2
+GCA_000161915	ST3
+GCA_000162255	ST4
+GCA_000162315	ST5
+GCA_000176975	ST6
+GCA_000177575	ST7
+GCA_000301115	ST8
+GCA_000301135	ST9
+GCA_000466885	ST10
+![image](https://github.com/JustKing2610/Justin_Crispatus_project_lectorate/assets/127951903/48b4a673-2a32-4a21-b44e-0d14084d4060)
 
 
