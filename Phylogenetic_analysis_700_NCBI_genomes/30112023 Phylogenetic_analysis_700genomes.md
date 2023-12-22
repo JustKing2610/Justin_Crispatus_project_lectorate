@@ -229,3 +229,6 @@ This created an excel file with the following format: | Identifier | Sequence Ty
 ![image](https://github.com/JustKing2610/Justin_Crispatus_project_lectorate/assets/127951903/48b4a673-2a32-4a21-b44e-0d14084d4060)
 
 
+Next, these assigned sequence types should be added to the identifiers in the fasta file, this way, they will show up in the alignment and subsequent phylogenetic analysis, which allows for better visualisation of clusters. For this, another python script was written, this script
+
+
