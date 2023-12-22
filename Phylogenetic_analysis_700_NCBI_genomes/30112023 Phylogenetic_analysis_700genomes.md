@@ -225,17 +225,6 @@ ST_dataframe.to_excel("/mnt/StudentFiles/2023/Justin/mlst_crispatus/output_pytho
 ```
 
 This created an excel file with the following format: | Identifier | Sequence Type |
-Identifier	Sequence_types
-GCA_000091765	ST1
-GCA_000160515	ST2
-GCA_000161915	ST3
-GCA_000162255	ST4
-GCA_000162315	ST5
-GCA_000176975	ST6
-GCA_000177575	ST7
-GCA_000301115	ST8
-GCA_000301135	ST9
-GCA_000466885	ST10
 ![image](https://github.com/JustKing2610/Justin_Crispatus_project_lectorate/assets/127951903/48b4a673-2a32-4a21-b44e-0d14084d4060)
 
 
