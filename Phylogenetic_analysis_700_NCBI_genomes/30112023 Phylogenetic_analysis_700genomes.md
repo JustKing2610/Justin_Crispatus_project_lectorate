@@ -229,6 +229,61 @@ This created an excel file with the following format: | Identifier | Sequence Ty
 ![image](https://github.com/JustKing2610/Justin_Crispatus_project_lectorate/assets/127951903/48b4a673-2a32-4a21-b44e-0d14084d4060)
 
 
-Next, these assigned sequence types should be added to the identifiers in the fasta file, this way, they will show up in the alignment and subsequent phylogenetic analysis, which allows for better visualisation of clusters. For this, another python script was written, this script
+Next, these assigned sequence types should be added to the identifiers in the fasta file, this way, they will show up in the alignment and subsequent phylogenetic analysis, which allows for better visualisation of clusters. For this, another python script was written, this script Took a file of all previous selected and quality controlled sequences in fasta format and the previously described excel file containing Identifiers and sequence types. 
+
+The read the excel file as a panda DataFrame, then created a dictonary of the identifiers and sequence types and matched the identifiers in the excel file to the identifiers in the fasta file. When it found a matching GCA identifier, the sequence type assigned in the excel file would be parsed into a modified header in the Fasta file and written to a new fasta file. 
+```
+from Bio import SeqIO
+import pandas as pd
+import re
+
+# Path to the input FASTA file
+fasta_file_path = "/mnt/StudentFiles/2023/Justin/mlst_crispatus/ST_all_700_Genomes/combined_slph_for_alignment.fasta"
+
+# Path to the Excel file with identifiers and sequence types
+excel_file_path = "/mnt/StudentFiles/2023/Justin/mlst_crispatus/test_new_identifiers/output_python_mlst_scheme/ST_types_Crispatus_chewbacca.xlsx"
+
+# Path to the output FASTA file
+output_fasta_path = "/mnt/StudentFiles/2023/Justin/mlst_crispatus/ST_all_700_Genomes/Assigned_st_all_extracted_slph.fasta "
+
+# Read Excel file into a pandas DataFrame
+df = pd.read_excel(excel_file_path, names=['Identifier', 'Sequence_types'])
+
+# Create a dictionary to map identifiers to sequence types
+identifier_map = dict(zip(df['Identifier'], df['Sequence_types']))
+ 
+# Open the output FASTA file for writing
+with open(output_fasta_path, 'w') as output_fasta:
+    # Iterate over sequences in the input FASTA file
+    for record in SeqIO.parse(fasta_file_path, 'fasta'):
+        # Use regular expression to extract everything starting from 'GCA_' until the first period
+        match = re.match(r"^.*?(GCA_\d+)\..*$", record.id)
+        
+        if match:
+            base_identifier = match.group(1)
+            
+            # Check if the base identifier is in the mapping dictionary
+            if base_identifier in identifier_map:
+                # Concatenate the sequence type to the modified identifier
+                new_identifier = f'>{identifier_map[base_identifier]}_{base_identifier}'
+                
+                # Create a new SeqRecord with the updated identifier and the original sequence
+                updated_record = record
+                updated_record.id = new_identifier
+                updated_record.description = ''
+                
+                
+                SeqIO.write(updated_record, output_fasta, 'fasta')
+                
+                
+                print(f"Updated: {new_identifier}")
+        else:
+            print(f"Skipping record with invalid identifier format: {record.id}")
+
+print(f"Output written to {output_fasta_path}")
+```
+The running of this script lead to the loss of 81 sequences. Which was caused by these sequences being lost in the cgMLST scheme creation. So this alignment continued with 127 sequences
+
+
 
 
