@@ -225,6 +225,7 @@ ST_dataframe.to_excel("/mnt/StudentFiles/2023/Justin/mlst_crispatus/output_pytho
 ```
 
 This created an excel file with the following format: | Identifier | Sequence Type |
+
 ![image](https://github.com/JustKing2610/Justin_Crispatus_project_lectorate/assets/127951903/48b4a673-2a32-4a21-b44e-0d14084d4060)
 
 
