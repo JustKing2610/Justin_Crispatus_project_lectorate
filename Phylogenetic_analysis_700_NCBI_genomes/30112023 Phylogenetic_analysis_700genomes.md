@@ -286,4 +286,18 @@ The running of this script lead to the loss of 81 sequences. Which was caused by
 ![Genome _ SlpH quality assesment  (1)](https://github.com/JustKing2610/Justin_Crispatus_project_lectorate/assets/127951903/ba303010-d812-4dbb-a171-6f033a6e60b8)
 
 # Final alignment and phylogenetic analysis of SlpH 
+First, Sequences with the same sequence type were discarded randomly and 1 was left. this was done by hand. 
+
+The alignment with 1 of each sequence type was achieved, simultaneously, our sequenced SlpH amplicons were added to this alignment.
+## alignment consensus sequenced amplicons
+For the addition of the consensus, the raw sequenced reads were first filterered, with the read length criteria between 900 and 1200, since the amplicons were 1150bp long, this was done using chopper:
+```
+for i in {1..11}; do   barcode="barcode$(printf "%02d" $i)";   input_file="../../input/$barcode/$barcode*.fastq";   output_file="${barcode}_filtered.fastq";   cat $input_file | chopper -l 900 --maxlength 1200 -t 4 > $output_file; done
+```
+
+After this, a concensus was made using EPI2MElabs wf-amplicons using the following command for the filtered raw data:
+```
+
+```
+
 
