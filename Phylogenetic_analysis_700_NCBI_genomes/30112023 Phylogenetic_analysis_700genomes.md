@@ -290,14 +290,19 @@ First, Sequences with the same sequence type were discarded randomly and 1 was l
 
 The alignment with 1 of each sequence type was achieved, simultaneously, our sequenced SlpH amplicons were added to this alignment.
 ## alignment consensus sequenced amplicons
-For the addition of the consensus, the raw sequenced reads were first filterered, with the read length criteria between 900 and 1200, since the amplicons were 1150bp long, this was done using chopper:
+For the addition of the consensus, the raw sequenced reads were first filterered, with the read length criteria between 900 and 1200, since the amplicons were 1150bp long, this would make sure mostly full amplicon reads would be used for the consensus. This was done using chopper:
 ```
 for i in {1..11}; do   barcode="barcode$(printf "%02d" $i)";   input_file="../../input/$barcode/$barcode*.fastq";   output_file="${barcode}_filtered.fastq";   cat $input_file | chopper -l 900 --maxlength 1200 -t 4 > $output_file; done
 ```
 
 After this, a concensus was made using EPI2MElabs wf-amplicons using the following command for the filtered raw data:
 ```
-
+nextflow run epi2me-labs/wf-amplicon --fastq ../input/ --threads 12
 ```
+The consensus strands produced were checked for quality and concatenated into 1 file, before they were added to the fasta file containing all the remaining SlpH sequences for alignment.
+
+# final alignment and phylogenetic analysis of all SlpH sequences gathered and sequenced
+
+
 
 
