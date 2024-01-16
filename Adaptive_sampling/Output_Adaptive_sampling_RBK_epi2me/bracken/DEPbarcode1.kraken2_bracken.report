@@ -1,0 +1,32 @@
+name	taxonomy_id	taxonomy_lvl	kraken_assigned_reads	added_reads	new_est_reads	fraction_total_reads
+Homo sapiens	9606	S	23862	75	23937	0.98636
+Thermothelomyces thermophilus	78579	S	1	0	1	0.00004
+Plasmodium malariae	5858	S	1	0	1	0.00004
+Lactobacillus iners	147802	S	265	2	267	0.01100
+Lactobacillus jensenii	109790	S	25	0	25	0.00103
+Weissella hellenica	46256	S	1	0	1	0.00004
+Streptococcus iniae	1346	S	1	0	1	0.00004
+Bacillus sp. THAF10	2587848	S	1	0	1	0.00004
+Alkalihalobacillus clausii	79880	S	1	0	1	0.00004
+Priestia megaterium	1404	S	1	2	3	0.00012
+Staphylococcus equorum	246432	S	1	0	1	0.00004
+Gardnerella vaginalis	2702	S	5	1	6	0.00025
+Gardnerella leopoldii	2792978	S	1	0	1	0.00004
+Pengzhenrongella sicca	2819238	S	1	0	1	0.00004
+Leifsonia sp. ZF2019	2781978	S	1	0	1	0.00004
+Nocardiopsis sp. HDS12	2831968	S	1	0	1	0.00004
+Haemophilus parainfluenzae	729	S	3	0	3	0.00012
+Pantoea cypripedii	55209	S	1	0	1	0.00004
+Pantoea sp. SO10	2575375	S	1	0	1	0.00004
+Francisella philomiragia	28110	S	1	0	1	0.00004
+Vibrio sp. SS-MA-C1-2	2908646	S	1	0	1	0.00004
+Rhizobium sp. TH2	2775403	S	1	0	1	0.00004
+Neisseria macacae	496	S	1	0	1	0.00004
+Formosa agariphila	320324	S	1	0	1	0.00004
+Tannerella serpentiformis	712710	S	1	0	1	0.00004
+Pelodictyon phaeoclathratiforme	34090	S	1	0	1	0.00004
+Aliarcobacter butzleri	28197	S	1	0	1	0.00004
+Syntrophus aciditrophicus	316277	S	1	0	1	0.00004
+Methanococcus maripaludis	39152	S	1	0	1	0.00004
+Musca hytrosavirus	2747498	S	1	0	1	0.00004
+Pagevirus pascal	1921187	S	1	0	1	0.00004

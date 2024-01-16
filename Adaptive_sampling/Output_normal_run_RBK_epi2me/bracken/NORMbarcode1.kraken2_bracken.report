@@ -1,0 +1,15 @@
+name	taxonomy_id	taxonomy_lvl	kraken_assigned_reads	added_reads	new_est_reads	fraction_total_reads
+Homo sapiens	9606	S	19957	54	20011	0.98805
+Fusarium poae	36050	S	1	0	1	0.00005
+Lactobacillus iners	147802	S	195	2	197	0.00973
+Lactobacillus jensenii	109790	S	19	0	19	0.00094
+Lactobacillus crispatus	47770	S	2	0	2	0.00010
+Streptococcus parasanguinis	1318	S	1	1	2	0.00010
+Aerococcus christensenii	87541	S	2	0	2	0.00010
+Peribacillus psychrosaccharolyticus	1407	S	1	0	1	0.00005
+Gemella sanguinis	84135	S	1	0	1	0.00005
+Acetobacterium sp. KB-1	2184575	S	1	0	1	0.00005
+Gardnerella vaginalis	2702	S	3	2	5	0.00025
+Rothia mucilaginosa	43675	S	1	0	1	0.00005
+Prevotella sp. oral taxon 475	712471	S	1	4	5	0.00025
+Haemophilus parainfluenzae	729	S	2	0	2	0.00010

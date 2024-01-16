@@ -1,0 +1,63 @@
+name	taxonomy_id	taxonomy_lvl	kraken_assigned_reads	added_reads	new_est_reads	fraction_total_reads
+Homo sapiens	9606	S	20875	121	20996	0.96711
+Pichia kudriavzevii	4909	S	1	0	1	0.00005
+Gardnerella vaginalis	2702	S	122	64	186	0.00857
+Gardnerella leopoldii	2792978	S	69	23	92	0.00424
+Gardnerella piotii	2792977	S	16	3	19	0.00088
+Gardnerella swidsinskii	2792979	S	7	22	29	0.00134
+Fannyhessea vaginae	82135	S	25	0	25	0.00115
+Corynebacterium glutamicum	1718	S	1	0	1	0.00005
+Mycolicibacterium aurum	1791	S	1	0	1	0.00005
+Clavibacter michiganensis	28447	S	1	0	1	0.00005
+Arabiibacter massiliensis	1870985	S	1	1	2	0.00009
+Lactobacillus iners	147802	S	13	2	15	0.00069
+Aerococcus christensenii	87541	S	3	0	3	0.00014
+Tetragenococcus halophilus	51669	S	1	0	1	0.00005
+Paenibacillus borealis	160799	S	1	0	1	0.00005
+Aneurinibacillus sp. B1	2966586	S	1	0	1	0.00005
+Bacillus sp. ZJS3	2928154	S	1	0	1	0.00005
+Gemella morbillorum	29391	S	1	0	1	0.00005
+Mageeibacillus indolicus	884684	S	6	0	6	0.00028
+Clostridium bornimense	1216932	S	2	0	2	0.00009
+Clostridium sp. BJN0001	2930219	S	1	0	1	0.00005
+Clostridium perfringens	1502	S	1	0	1	0.00005
+Clostridium tetani	1513	S	1	0	1	0.00005
+Blautia producta	33035	S	1	0	1	0.00005
+[Ruminococcus] lactaris	46228	S	1	0	1	0.00005
+Dehalobacterium formicoaceticum	51515	S	1	0	1	0.00005
+Halanaerobium hydrogeniformans	656519	S	1	0	1	0.00005
+Finegoldia magna	1260	S	1	0	1	0.00005
+Anaerococcus obesiensis	1287640	S	1	0	1	0.00005
+Parvimonas micra	33033	S	1	0	1	0.00005
+Metamycoplasma hominis	2098	S	21	1	22	0.00101
+Sneathia vaginalis	187101	S	190	1	191	0.00880
+Prevotella corporis	28128	S	10	7	17	0.00078
+Prevotella melaninogenica	28132	S	8	3	11	0.00051
+Prevotella jejuni	1177574	S	4	3	7	0.00032
+Prevotella nigrescens	28133	S	3	3	6	0.00028
+Prevotella bryantii	77095	S	2	0	2	0.00009
+Prevotella sp. oral taxon 299	652716	S	1	0	1	0.00005
+Prevotella sp. E2-28	2913620	S	1	0	1	0.00005
+Prevotella denticola	28129	S	2	1	3	0.00014
+Prevotella veroralis	28137	S	1	0	1	0.00005
+Prevotella histicola	470565	S	1	0	1	0.00005
+Prevotella intermedia	28131	S	1	1	2	0.00009
+Hoylesella buccalis	28127	S	9	6	15	0.00069
+Polaribacter reichenbachii	996801	S	2	0	2	0.00009
+Algibacter alginicilyticus	1736674	S	1	0	1	0.00005
+Maribacter sp. HL-LV01	2976127	S	1	0	1	0.00005
+Flavobacterium sp. KACC 22758	3025667	S	1	0	1	0.00005
+Tenacibaculum jejuense	584609	S	1	0	1	0.00005
+Elizabethkingia miricola	172045	S	1	0	1	0.00005
+Chryseobacterium sp. LJ668	2864040	S	1	0	1	0.00005
+Pedobacter cryoconitis	188932	S	1	0	1	0.00005
+Dickeya chrysanthemi	556	S	1	0	1	0.00005
+Pseudoalteromonas espejiana	28107	S	1	0	1	0.00005
+Pseudoalteromonas translucida	166935	S	1	0	1	0.00005
+Legionella endosymbiont of Polyplax serrata	2005262	S	1	0	1	0.00005
+Vibrio anguillarum	55601	S	1	0	1	0.00005
+Phyllobacterium zundukense	1867719	S	2	0	2	0.00009
+Massilia sp. LPB0304	2769491	S	1	0	1	0.00005
+Azoarcus sp. KH32C	748247	S	1	0	1	0.00005
+Helicobacter cinaedi	213	S	1	0	1	0.00005
+Desulfuromonas versatilis	2802975	S	1	0	1	0.00005

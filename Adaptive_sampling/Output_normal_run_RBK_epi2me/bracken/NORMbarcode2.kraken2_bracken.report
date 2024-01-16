@@ -1,0 +1,18 @@
+name	taxonomy_id	taxonomy_lvl	kraken_assigned_reads	added_reads	new_est_reads	fraction_total_reads
+Homo sapiens	9606	S	28220	33	28253	0.94155
+Lactobacillus crispatus	47770	S	1615	94	1709	0.05695
+Lactobacillus amylovorus	1604	S	11	1	12	0.00040
+Lactobacillus jensenii	109790	S	8	0	8	0.00027
+Lactobacillus iners	147802	S	5	0	5	0.00017
+Lactobacillus helveticus	1587	S	2	0	2	0.00007
+Lactobacillus amylolyticus	83683	S	1	0	1	0.00003
+Limosilactobacillus portuensis	2742601	S	5	0	5	0.00017
+Limosilactobacillus vaginalis	1633	S	1	0	1	0.00003
+Lactiplantibacillus pentosus	1589	S	1	0	1	0.00003
+Ureaplasma parvum	134821	S	2	1	3	0.00010
+Gardnerella vaginalis	2702	S	1	0	1	0.00003
+Bradyrhizobium sp. 200	2782665	S	1	0	1	0.00003
+Asticcacaulis sp. AND118	2840468	S	1	0	1	0.00003
+Klebsiella pneumoniae	573	S	1	0	1	0.00003
+Flavobacterium sp. Sr18	935222	S	1	0	1	0.00003
+Methanobacterium congolense	118062	S	1	0	1	0.00003
