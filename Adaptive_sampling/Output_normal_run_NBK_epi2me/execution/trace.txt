@@ -1,0 +1,24 @@
+task_id	hash	native_id	name	status	exit	submit	duration	realtime	%cpu	peak_rss	peak_vmem	rchar	wchar
+4	82/6e6949	18333	kraken_pipeline:run_common:getParams	COMPLETED	0	2024-01-16 13:25:13.890	1.5s	4ms	143.6%	0	0	61.6 KB	4.9 KB
+9	14/3575a7	20339	kraken_pipeline:output (1)	COMPLETED	0	2024-01-16 13:25:15.428	811ms	7ms	82.4%	0	0	57.9 KB	1.2 KB
+1	2b/219e5d	18303	kraken_pipeline:run_common:getVersions	COMPLETED	0	2024-01-16 13:25:13.873	3.1s	2s	191.8%	52.3 MB	3.7 GB	12.1 MB	8.7 MB
+10	f2/8e7999	21514	kraken_pipeline:output (2)	COMPLETED	0	2024-01-16 13:25:16.959	846ms	6ms	100.0%	0	0	57.9 KB	1.2 KB
+8	e2/250ff9	18391	fastcat (4)	COMPLETED	0	2024-01-16 13:25:13.912	41.3s	39.9s	122.1%	40.6 MB	1.4 GB	1.5 GB	1.2 GB
+2	a7/c7bc7c	18481	prepare_databases:download_unpack_taxonomy	COMPLETED	0	2024-01-16 13:25:13.941	44.2s	42.4s	29.0%	11.6 MB	16.2 MB	246.1 MB	1.8 GB
+6	ae/ff6a19	18368	fastcat (2)	COMPLETED	0	2024-01-16 13:25:13.905	48.3s	46.9s	139.5%	11.4 MB	25.2 MB	2 GB	1.6 GB
+7	35/dba936	18352	fastcat (3)	COMPLETED	0	2024-01-16 13:25:13.896	53.6s	52.2s	142.4%	39.3 MB	1.4 GB	2.3 GB	1.8 GB
+5	dd/080169	18315	fastcat (1)	COMPLETED	0	2024-01-16 13:25:13.882	1m 7s	1m 6s	143.2%	40.3 MB	1.4 GB	3 GB	2.4 GB
+3	a4/10520f	18412	prepare_databases:unpack_download_kraken2_database	COMPLETED	0	2024-01-16 13:25:13.919	23m 49s	23m 48s	15.8%	11.2 MB	16.2 MB	18.5 GB	20.5 GB
+12	20/d08794	27000	prepare_databases:determine_bracken_length	COMPLETED	0	2024-01-16 13:49:03.423	1.3s	15ms	93.3%	0	0	87.7 KB	2.1 KB
+11	2e/3c1dfb	27009	kraken_pipeline:run_kraken2 (1)	COMPLETED	0	2024-01-16 13:49:03.437	29.4s	28.3s	111.9%	7.9 GB	8.9 GB	8.2 GB	136.9 MB
+13	52/4e8a8b	27021	kraken_pipeline:run_kraken2 (2)	COMPLETED	0	2024-01-16 13:49:03.444	37.7s	36.6s	111.4%	7.9 GB	9.1 GB	8.4 GB	186.8 MB
+14	16/c650ba	27053	kraken_pipeline:run_kraken2 (3)	COMPLETED	0	2024-01-16 13:49:03.458	42s	40.4s	115.2%	8 GB	9.5 GB	8.6 GB	233.7 MB
+15	9e/9af7bb	27031	kraken_pipeline:run_kraken2 (4)	COMPLETED	0	2024-01-16 13:49:03.449	50.4s	48.8s	121.4%	7.9 GB	8.9 GB	9 GB	270.7 MB
+16	60/e840ee	3185	kraken_pipeline:run_bracken (1)	COMPLETED	0	2024-01-16 13:49:32.807	34.7s	33.8s	106.7%	603.1 MB	3.9 GB	512.5 MB	26.9 MB
+17	6f/b7da07	4953	kraken_pipeline:run_bracken (2)	COMPLETED	0	2024-01-16 13:49:41.199	27s	26.2s	124.0%	731.3 MB	3.9 GB	512.5 MB	26.9 MB
+18	a0/d86ce8	5992	kraken_pipeline:run_bracken (3)	COMPLETED	0	2024-01-16 13:49:45.502	26.7s	25.8s	122.8%	777.6 MB	3.9 GB	512.9 MB	27.2 MB
+19	82/b9f678	7779	kraken_pipeline:run_bracken (4)	COMPLETED	0	2024-01-16 13:49:53.907	25.7s	24.7s	125.4%	422 MB	3.9 GB	512.5 MB	26.9 MB
+20	02/5e0d50	11219	kraken_pipeline:createAbundanceTables	COMPLETED	0	2024-01-16 13:50:19.635	13.6s	12.6s	121.4%	422.6 MB	3.9 GB	46.9 MB	26.8 MB
+22	26/0097f9	12741	kraken_pipeline:output (3)	COMPLETED	0	2024-01-16 13:50:33.277	821ms	7ms	123.5%	0	0	57.9 KB	1.2 KB
+21	df/b68a79	12777	kraken_pipeline:makeReport (1)	COMPLETED	0	2024-01-16 13:50:33.325	1m 30s	1m 30s	102.6%	2.3 GB	5.8 GB	354.8 MB	32.9 MB
+23	44/bad245	19202	kraken_pipeline:output (4)	COMPLETED	0	2024-01-16 13:52:03.840	881ms	8ms	155.6%	0	0	57.9 KB	1.2 KB
