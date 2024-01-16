@@ -1,0 +1,35 @@
+task_id	hash	native_id	name	status	exit	submit	duration	realtime	%cpu	peak_rss	peak_vmem	rchar	wchar
+1	3a/7ef0ee	23866	kraken_pipeline:run_common:getParams	COMPLETED	0	2023-11-29 17:45:47.835	1.5s	7ms	158.5%	0	0	61.8 KB	4.9 KB
+13	ee/2c8365	26000	kraken_pipeline:output (1)	COMPLETED	0	2023-11-29 17:45:49.310	1s	6ms	152.7%	0	0	58.1 KB	1.2 KB
+2	d4/d935d1	23891	kraken_pipeline:run_common:getVersions	COMPLETED	0	2023-11-29 17:45:47.857	3.6s	2.2s	139.9%	49.1 MB	3.7 GB	12.1 MB	8.7 MB
+14	d2/60516e	28966	kraken_pipeline:output (2)	COMPLETED	0	2023-11-29 17:45:51.491	788ms	5ms	103.7%	0	0	58.1 KB	1.2 KB
+7	47/3cdb8a	24058	fastcat (3)	COMPLETED	0	2023-11-29 17:45:47.913	21.7s	20.1s	120.8%	11.3 MB	25.2 MB	759.6 MB	590.9 MB
+6	73/7818b5	23938	fastcat (2)	COMPLETED	0	2023-11-29 17:45:47.872	27.4s	25.7s	128.2%	11.6 MB	25.2 MB	1 GB	799.1 MB
+11	20/08d42d	23905	fastcat (7)	COMPLETED	0	2023-11-29 17:45:47.862	29s	27.8s	130.3%	41.3 MB	1.4 GB	1.1 GB	898.2 MB
+12	ce/cebe4d	23947	fastcat (8)	COMPLETED	0	2023-11-29 17:45:47.877	36.7s	34.6s	134.2%	11.8 MB	25.2 MB	1.4 GB	1.1 GB
+10	8b/d51757	23875	fastcat (6)	COMPLETED	0	2023-11-29 17:45:47.850	37.3s	36.4s	131.8%	11.6 MB	25.4 MB	1.5 GB	1.2 GB
+8	e8/275728	23921	fastcat (4)	COMPLETED	0	2023-11-29 17:45:47.868	48.3s	46.9s	138.1%	11.7 MB	25.2 MB	2 GB	1.6 GB
+9	74/25d6d3	24032	fastcat (5)	COMPLETED	0	2023-11-29 17:45:47.904	55.3s	53s	142.4%	40.5 MB	1.4 GB	2.3 GB	1.8 GB
+5	19/7f1491	24077	fastcat (1)	COMPLETED	0	2023-11-29 17:45:47.922	1m 10s	1m 8s	140.7%	11.7 MB	25.5 MB	3 GB	2.4 GB
+4	5d/ba1510	23999	prepare_databases:unpack_download_kraken2_database	COMPLETED	0	2023-11-29 17:45:47.890	11m 21s	11m 18s	27.9%	11.4 MB	16.2 MB	18.5 GB	20.5 GB
+16	07/00a2c4	27828	prepare_databases:determine_bracken_length	COMPLETED	0	2023-11-29 17:57:08.886	2.1s	12ms	151.4%	0	0	87.9 KB	2.1 KB
+17	74/4c8960	27865	kraken_pipeline:run_kraken2 (2)	COMPLETED	0	2023-11-29 17:57:08.917	14.2s	11.7s	232.4%	7.9 GB	8.9 GB	7.9 GB	93.9 MB
+15	e5/655adb	27898	kraken_pipeline:run_kraken2 (1)	COMPLETED	0	2023-11-29 17:57:08.931	14.8s	10.4s	199.9%	7.8 GB	9.3 GB	7.8 GB	68.9 MB
+20	f6/b37b5b	27835	kraken_pipeline:run_kraken2 (5)	COMPLETED	0	2023-11-29 17:57:08.900	17.7s	15.3s	243.2%	7.9 GB	9 GB	8.2 GB	136.9 MB
+18	a3/a7798f	27927	kraken_pipeline:run_kraken2 (3)	COMPLETED	0	2023-11-29 17:57:08.938	17.9s	13.4s	220.4%	7.9 GB	8.8 GB	8 GB	113.5 MB
+21	be/76a4cf	27846	kraken_pipeline:run_kraken2 (6)	COMPLETED	0	2023-11-29 17:57:08.910	19.9s	18.7s	262.1%	7.9 GB	8.9 GB	8.4 GB	186.8 MB
+19	cb/29dad8	27884	kraken_pipeline:run_kraken2 (4)	COMPLETED	0	2023-11-29 17:57:08.927	20.8s	15.6s	240.1%	7.9 GB	8.8 GB	8.2 GB	133.4 MB
+22	50/e55607	27914	kraken_pipeline:run_kraken2 (7)	COMPLETED	0	2023-11-29 17:57:08.934	25.6s	21.7s	259.9%	7.9 GB	8.8 GB	8.6 GB	233.7 MB
+23	e7/8e9679	27874	kraken_pipeline:run_kraken2 (8)	COMPLETED	0	2023-11-29 17:57:08.922	29.3s	25.3s	281.8%	7.9 GB	8.9 GB	9 GB	270.7 MB
+24	29/837d6b	5918	kraken_pipeline:run_bracken (1)	COMPLETED	0	2023-11-29 17:57:23.174	33.6s	32.3s	110.8%	815.8 MB	3.9 GB	512.4 MB	26.8 MB
+25	fc/9a874b	6246	kraken_pipeline:run_bracken (2)	COMPLETED	0	2023-11-29 17:57:23.748	34.2s	33.1s	108.3%	459.2 MB	3.9 GB	512.4 MB	26.8 MB
+27	c5/ab53a0	8193	kraken_pipeline:run_bracken (4)	COMPLETED	0	2023-11-29 17:57:26.851	32.8s	31.7s	112.2%	422.6 MB	3.9 GB	512.5 MB	26.9 MB
+26	16/0faadb	8020	kraken_pipeline:run_bracken (3)	COMPLETED	0	2023-11-29 17:57:26.617	33.1s	32s	112.0%	786.9 MB	3.9 GB	512.5 MB	26.9 MB
+28	e3/ba5822	9238	kraken_pipeline:run_bracken (5)	COMPLETED	0	2023-11-29 17:57:28.774	32.2s	31.3s	111.1%	422.8 MB	3.9 GB	512.5 MB	26.9 MB
+29	61/fc5402	10449	kraken_pipeline:run_bracken (6)	COMPLETED	0	2023-11-29 17:57:31.234	30.5s	29.6s	117.8%	422.4 MB	3.9 GB	512.4 MB	26.8 MB
+30	9d/931fba	11943	kraken_pipeline:run_bracken (7)	COMPLETED	0	2023-11-29 17:57:34.587	29.2s	28.3s	116.4%	422.6 MB	3.9 GB	512.9 MB	27.2 MB
+31	da/29edbb	13611	kraken_pipeline:run_bracken (8)	COMPLETED	0	2023-11-29 17:57:38.223	29s	28s	121.6%	422.8 MB	3.9 GB	512.5 MB	26.9 MB
+32	71/38c228	19537	kraken_pipeline:createAbundanceTables	COMPLETED	0	2023-11-29 17:58:07.248	13.8s	12.9s	122.2%	422.8 MB	3.9 GB	47 MB	26.8 MB
+34	ee/38c803	21280	kraken_pipeline:output (3)	COMPLETED	0	2023-11-29 17:58:21.068	975ms	6ms	177.8%	0	0	58.1 KB	1.2 KB
+33	c7/438348	21304	kraken_pipeline:makeReport (1)	COMPLETED	0	2023-11-29 17:58:21.102	2m 10s	2m 9s	101.8%	3.2 GB	6.8 GB	504.5 MB	34.6 MB
+35	71/12ed73	31118	kraken_pipeline:output (4)	COMPLETED	0	2023-11-29 18:00:30.644	858ms	8ms	115.1%	0	0	58.1 KB	1.2 KB
