@@ -289,7 +289,8 @@ The running of this script lead to the loss of 81 sequences. Which was caused by
 First, Sequences with the same sequence type were discarded randomly and 1 was left. this was done by hand. 
 
 The alignment with 1 of each sequence type was achieved, simultaneously, our sequenced SlpH amplicons were added to this alignment.
-## alignment consensus sequenced amplicons
+## 2 methods of consensus creation from SlpH amplicons raw read (sequencing run 2324-022)
+### method 1: Epi2melabs
 For the addition of the consensus, the raw sequenced reads were first filterered, with the read length criteria between 900 and 1200, since the amplicons were 1150bp long, this would make sure mostly full amplicon reads would be used for the consensus. This was done using chopper:
 ```
 for i in {1..11}; do   barcode="barcode$(printf "%02d" $i)";   input_file="../../input/$barcode/$barcode*.fastq";   output_file="${barcode}_filtered.fastq";   cat $input_file | chopper -l 900 --maxlength 1200 -t 4 > $output_file; done
