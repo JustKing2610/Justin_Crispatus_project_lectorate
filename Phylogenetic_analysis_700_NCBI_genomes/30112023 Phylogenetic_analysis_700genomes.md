@@ -282,7 +282,7 @@ with open(output_fasta_path, 'w') as output_fasta:
 
 print(f"Output written to {output_fasta_path}")
 ```
-The running of this script lead to the loss of 81 sequences. Which was caused by these sequences being lost in the cgMLST scheme creation. So this alignment continued with 127 sequences This lead to an updated flowchart with discarded sequences: 
+The running of this script lead to the loss of 81 sequences. Which was caused by these sequences being lost in the cgMLST scheme creation. identical sequence types were also discarded and 1 sequence per sequence type was kept. So this alignment continued with 82 sequences This lead to an updated flowchart with discarded sequences: 
 ![Genome _ SlpH quality assesment  (2)](https://github.com/JustKing2610/Justin_Crispatus_project_lectorate/assets/127951903/a91953e7-5d9f-463e-8b9d-8e9facc8da96)
 
 
