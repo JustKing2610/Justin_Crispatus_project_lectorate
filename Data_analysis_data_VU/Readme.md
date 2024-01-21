@@ -1,4 +1,5 @@
 # Mapping reads on SlpH from raw fasta (illumina paired-end) data
+The files recieved had very long names.
 rename files, in this case:
 ```
 for file in *.filt.fastq; do
@@ -6,6 +7,7 @@ for file in *.filt.fastq; do
     mv "$file" "$new_name"
 done 
 ```
+This left only the base name (which were names and numbers of repetition (tonia_1_r1/r2 Tonia_2_r1/r2)
 Then create an index of the SlpH gene fasta using BWA index:
 ```
 bwa index L_crispatus_SlpH_fasta.fasta
@@ -32,3 +34,4 @@ Make a MSA using MAFFT
 ```
 mafft concatenated_consensus.fasta > MSA_consensus.fasta
 ```
+Visualise in a MSA viewer or run iqtree to construct a phylogenetic analysis.
