@@ -326,7 +326,9 @@ input_folder="consensus_strands"; output_folder="alignment_fasta_upper"; for fas
 before concatenating, the header needed to be changed, in this case done manually from the refseq header every barcode recieved to it's corresponding sample name
 
 Sample A2/A3/RL09/RL10/RL11/RL17's conensus strands were concatenated into 1 file, due to only these samples containing enough _L. crispatus_ for a good quality consensus. These sequences were then added into the file with all other sequences from NCBI, and cut at 1150bp for accurate alignment due to the shorter lenght of the amplicons. The final file can be found in this folder.
-
+```
+awk '/^>/ {if (seq) {print substr(seq, 1, 1150); seq="";} print; next} {seq = seq $0} END {if (seq) print substr(seq, 1, 1150)}' All_slph_1_per_ST_updated_refseq_new_amplicons.fasta > Cut_1150bp_no_weird_insert_all_good_seqs.fasta
+```
 next, the file containing these sequences named "Cut_1150bp_no_weird_insert_all_good_seqs" was aligned with mafft using the following commmand:
 ```
 "/mnt/StudentFiles/2023/Justin/miniconda3/envs/mafft/bin/mafft"  --globalpair --maxiterate 16 --inputorder "Cut_1150bp_no_weird_insert_all_good_seqs.fasta" > "mafft/Cut_1150bp_no_weird_insert_all_good_seqs"
