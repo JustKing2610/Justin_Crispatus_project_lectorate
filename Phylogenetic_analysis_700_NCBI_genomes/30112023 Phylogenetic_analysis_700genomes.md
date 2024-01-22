@@ -297,7 +297,7 @@ For the addition of the consensus, the raw sequenced reads were first filterered
 for i in {1..11}; do   barcode="barcode$(printf "%02d" $i)";   input_file="../../input/$barcode/$barcode*.fastq";   output_file="${barcode}_filtered.fastq";   cat $input_file | chopper -l 900 --maxlength 1200 -t 4 > $output_file; done
 ```
 
-After this, a concensus was made using EPI2MElabs wf-amplicons using the following command for the filtered raw data:
+After this, a de novo concensus was made using EPI2MElabs wf-amplicons using the following command for the filtered raw data:
 ```
 nextflow run epi2me-labs/wf-amplicon --fastq ../input/ --threads 12
 ```
