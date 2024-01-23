@@ -34,7 +34,13 @@ The files somehow received the header of the refseq, probably happend during map
 
 a mafft alignment using the G_INS_I algorithm was made with options with the following command
 ```
-/usr/bin/mafft"  --globalpair --maxiterate 16 --inputorder "filename.fasta" > "filename"
+"/usr/bin/mafft"  --globalpair --maxiterate 16 --inputorder "amplicon_fasta_file.fasta"
+
 ```
 
 This alignment file was then feeded into iqtree using the following command
+```
+iqtree -s alignment_file_slph_sequences -B 1000 -alrt 1000
+```
+
+and was visualised in ITOL
