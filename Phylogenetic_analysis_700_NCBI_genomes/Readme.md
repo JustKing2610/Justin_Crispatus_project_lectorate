@@ -30,6 +30,6 @@ SlpH amplicons were sequenced and a consensus was made using samtools consensus
 ```
 input_folder="input_bam_sorted"; for bam_file in "$input_folder"/*.bam; do [ -e "$bam_file" ] && bam_basename=$(basename "$bam_file" .bam) && samtools consensus "$bam_file" > "${bam_basename}_consensus.fasta"; done 
 ```
-The files somehow received the header of the refseq, probably happend during mapping. So the headers of these 11 files were manually changed to sample names for alignment. after these files were concatenated and added to the fasta file with all other sequences cut to 1150bp. 
+The files somehow received the header of the refseq, probably happend during mapping. So the headers of these 11 files were manually changed to sample names for alignment. after these files were concatenated and added to the fasta file with all other sequences cut to 1150bp. only sample A2/A3 and all RL strains (RL09/10/11/17) were copied to the new file, due to other samples either containing no crispatus, or multiple strains.
 
 a mafft alignment using the G_INS_I algorithm was made with options with the following command
