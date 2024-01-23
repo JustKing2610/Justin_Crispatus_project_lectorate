@@ -4,7 +4,7 @@ For this analyis, first 700 _L. crispatus_ genomes were downloaded from NCBI as 
 
 next, Prokka was run on all genomes using: 
 ```
-for file in /700_genomes_crispatus/*.fasta; do prokka --outdir "/output_prokka/$(basename "$file" .fasta)" "$file"; done
+for file in /input/folder/genomes/*.fasta; do prokka --outdir "/output_prokka/$(basename "$file" .fasta)" "$file"; done
 ```
 Then, the gff files in the prokka output were renamed after the folder name:
 ```
@@ -33,3 +33,8 @@ input_folder="input_bam_sorted"; for bam_file in "$input_folder"/*.bam; do [ -e 
 The files somehow received the header of the refseq, probably happend during mapping. So the headers of these 11 files were manually changed to sample names for alignment. after these files were concatenated and added to the fasta file with all other sequences cut to 1150bp. only sample A2/A3 and all RL strains (RL09/10/11/17) were copied to the new file, due to other samples either containing no crispatus, or multiple strains.
 
 a mafft alignment using the G_INS_I algorithm was made with options with the following command
+```
+/usr/bin/mafft"  --globalpair --maxiterate 16 --inputorder "filename.fasta" > "filename"
+```
+
+This alignment file was then feeded into iqtree using the following command
