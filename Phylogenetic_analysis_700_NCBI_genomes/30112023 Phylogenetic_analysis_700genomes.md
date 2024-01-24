@@ -297,14 +297,39 @@ For the addition of the consensus, the raw sequenced reads were first filterered
 for i in {1..11}; do   barcode="barcode$(printf "%02d" $i)";   input_file="../../input/$barcode/$barcode*.fastq";   output_file="${barcode}_filtered.fastq";   cat $input_file | chopper -l 900 --maxlength 1200 -t 4 > $output_file; done
 ```
 
-After this, a concensus was made using EPI2MElabs wf-amplicons using the following command for the filtered raw data:
+After this, a de novo concensus was made using EPI2MElabs wf-amplicons using the following command for the filtered raw data:
 ```
 nextflow run epi2me-labs/wf-amplicon --fastq ../input/ --threads 12
 ```
 The consensus strands produced were checked for quality and concatenated into 1 file, before they were added to the fasta file containing all the remaining SlpH sequences for alignment.
 
 # final alignment and phylogenetic analysis of all SlpH sequences gathered and sequenced
+For the final alignment, it was decided that the insert present only in the refseq would be deleted, the 11bp sequence "CTGACAACACTA" at position 92-103 in the refseq gene was removed, after which it would be used for mapping the raw, filtered reads (900-1200bp) using the following command:
+```
+ for folder in raw_data_filtered_900_1200/*/; do foldername=$(basename "$folder"); minimap2 -ax map-ont ST93_REFSEQ_SlpH_GCA_009769205.1_SLpH.fasta "$folder"*.fastq | samtools view -bS - > "mapped_bamfiles/$foldername"_alignment.bam; done
+```
 
+The mapped bam files were then variant called and a consensus was extracted in fastq format using the following pipeline:
+```
+input_folder="mapped_bamfiles/"; output_folder="consensus_fastq/"; reference_genome="ST93_REFSEQ_SlpH_GCA_009769205.1_SLpH.fasta"; for bam_file in "$input_folder"/*.bam; do if [ ! -f "$bam_file" ]; then echo "Error: Input BAM file not found at $bam_file"; continue; fi; bam_basename=$(basename "$bam_file" .bam); bcftools mpileup --fasta-ref "$reference_genome" "$bam_file" | bcftools call -c | vcfutils.pl vcf2fq > "$output_folder/${bam_basename}_cns.fastq"; done
+```
 
+Then, the consensus fastq's were converted into fasta format using seqtk: 
+```
+input_folder="consensus_fastq/"; output_folder="consensus_strands/"; for fastq_file in "$input_folder"/*_cns.fastq; do if [ ! -f "$fastq_file" ]; then echo "Error: Input FASTQ file not found at $fastq_file"; continue; fi; fasta_basename=$(basename "$fastq_file" _cns.fastq); seqtk seq -aQ64 -q8 "$fastq_file" > "$output_folder/${fasta_basename}_cns.fasta"; done
+```
 
+since there were a couple uncapitalized letters in the fasta file, these were made upper case using the following:
+```
+input_folder="consensus_strands"; output_folder="alignment_fasta_upper"; for fasta_file in "$input_folder"/*.fasta; do [ -f "$fasta_file" ] && barcode=$(basename "$fasta_file" .fasta) && tr '[:lower:]' '[:upper:]' < "$fasta_file" > "$output_folder/${barcode}_consensus.fasta"; done
+```
+before concatenating, the header needed to be changed, in this case done manually from the refseq header every barcode recieved to it's corresponding sample name
 
+Sample A2/A3/RL09/RL10/RL11/RL17's conensus strands were concatenated into 1 file, due to only these samples containing enough _L. crispatus_ for a good quality consensus. These sequences were then added into the file with all other sequences from NCBI, and cut at 1150bp for accurate alignment due to the shorter lenght of the amplicons. The final file can be found in this folder.
+```
+awk '/^>/ {if (seq) {print substr(seq, 1, 1150); seq="";} print; next} {seq = seq $0} END {if (seq) print substr(seq, 1, 1150)}' All_slph_1_per_ST_updated_refseq_new_amplicons.fasta > Cut_1150bp_no_weird_insert_all_good_seqs.fasta
+```
+next, the file containing these sequences named "Cut_1150bp_no_weird_insert_all_good_seqs" was aligned with mafft using the following commmand:
+```
+"/mnt/StudentFiles/2023/Justin/miniconda3/envs/mafft/bin/mafft"  --globalpair --maxiterate 16 --inputorder "Cut_1150bp_no_weird_insert_all_good_seqs.fasta" > "mafft/Cut_1150bp_no_weird_insert_all_good_seqs"
+```
