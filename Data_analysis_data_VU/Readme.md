@@ -21,7 +21,7 @@ concatenate the consensus strands using cat
 ```
 cat *.fasta > concatenated_consensus.fasta
 ```
-create an MSA using MAFFT
+create an MSA using MAFFT. specify the G_INS_I algorithm.
 ```
 "/usr/bin/mafft"  --globalpair --maxiterate 16 --inputorder "concatenated_consensus.fasta"
 ```
