@@ -23,6 +23,6 @@ cat *.fasta > concatenated_consensus.fasta
 ```
 create an MSA using MAFFT
 ```
-mafft concatenated_consensus.fasta > MSA_consensus.fasta
+"/usr/bin/mafft"  --globalpair --maxiterate 16 --inputorder "concatenated_consensus.fasta"
 ```
-Visualise in a MSA viewer or run iqtree to construct a phylogenetic analysis.
+Visualise in a MSA viewer or run iqtree to construct a phylogenetic analysis. These specific results were visualised using Clustal omega.
