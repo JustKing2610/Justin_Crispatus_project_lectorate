@@ -24,5 +24,5 @@ if it works, docker is succesfully set up, you may now proceed to running the ep
 
 to to this, use the following command and change filepaths and settings as desired or neccesary:
 ```bash
-nextflow run epi2me-labs/wf-metagenomics --fastq /mnt/StudentFiles/2023/Justin/Data_Usable/2324-012_Eefje_JI_LC_RBK_BC01-04/analsis/Input_minimap_metagenomic_epi2me/ -with-docker 'epi2me/image:tag' -work-dir /mnt/StudentFiles/2023/Justin/Data_Usable/2324-012_Eefje_JI_LC_RBK_BC01-04/analsis/epi2me_output/Metagenomics_pipeline_RBK/ --threads 8 --database_set PlusPF-8
+nextflow run epi2me-labs/wf-metagenomics --fastq /file/path/to/raw/input/data -with-docker 'epi2me/image:tag' -work-dir /path/to/desired/working/directory/ [other settings]
 ```
