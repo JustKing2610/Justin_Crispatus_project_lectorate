@@ -1,5 +1,5 @@
 # Mapping reads on SlpH from raw fasta (illumina paired-end) data
-Then create an index of the SlpH gene from the reference genome (GCA_009769205.1) fasta using BWA index:
+first create an index of the SlpH gene from the reference genome (GCA_009769205.1) fasta using BWA index:
 ```
 bwa index L_crispatus_SlpH_fasta.fasta
 ```
