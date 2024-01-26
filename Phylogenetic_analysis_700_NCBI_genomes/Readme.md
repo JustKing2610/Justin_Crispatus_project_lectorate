@@ -1,6 +1,6 @@
 # Phylogenetic analysis workflow
 
-For this analyis, first 700 _L. crispatus_ genomes were downloaded from NCBI as see in *list*
+For this analysis, first 700 _L. crispatus_ genomes were downloaded from NCBI as see in *list*
 
 next, Prokka was run on all genomes using: 
 ```
