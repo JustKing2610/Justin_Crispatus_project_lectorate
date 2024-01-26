@@ -3,13 +3,13 @@ import pandas as pd
 import re
 
 # Path to the input FASTA file
-fasta_file_path = "/mnt/StudentFiles/2023/Justin/mlst_crispatus/ST_all_700_Genomes/combined_slph_for_alignment.fasta"
+fasta_file_path = "/path/to/fasta/all_slph.fasta"
 
 # Path to the Excel file with identifiers and sequence types
-excel_file_path = "/mnt/StudentFiles/2023/Justin/mlst_crispatus/test_new_identifiers/output_python_mlst_scheme/ST_types_Crispatus_chewbacca.xlsx"
+excel_file_path = "path/to/excel/identifiers_STs.xlsx"
 
 # Path to the output FASTA file
-output_fasta_path = "/mnt/StudentFiles/2023/Justin/mlst_crispatus/ST_all_700_Genomes/Assigned_st_all_extracted_slph.fasta "
+output_fasta_path = "/Path/to/new/fasta/with/STheaders/all_slph_st.fasta "
 
 # Read Excel file into a pandas DataFrame
 df = pd.read_excel(excel_file_path, names=['Identifier', 'Sequence_types'])
